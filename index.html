@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Popup message</title>
+	<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+	<div class="container">
+		<button class="btn">alert message</button>
+		<div class="popup">
+			<span id="close">&times;</span>
+			<p>perform your operation</p>
+			<div class="options">
+				<a href="">cancel</a>
+				<a href="">delete</a>
+			</div>
+		</div>
+		 <div class="cover">
+		 	
+		 </div>
+		<script src="../js/jquery.js"></script>
+		<script>
+			$(document).ready(function()
+			{
+			$(".btn").on('click', function(){
+			$(".cover").fadeIn('slow');
+			$(".popup").fadeIn('slow');
+			});
+           $(".popup").on('click', function()
+              {
+          if($(event.target).is("#close")) {
+          $(".cover").fadeOut('slow');
+		$(".popup").fadeOut('slow');
+
+        }
+                 });
+        $('.cover').on('click', function(){
+         $(".cover").fadeOut('slow');
+		$(".popup").fadeOut('slow');
+          });
+			    });
+		</script>
+	</div>
+</body>
+</html>
